@@ -8,7 +8,7 @@ public class CheckTests extends BaseTest {
     CheckPage checkPage = new CheckPage();
     LoginPage loginPage = new LoginPage();
 
-    @Test(description = "Sign in sayfasında olduğunun kontrolü")
+    @Test(description = "Bu sayfa da giriş yapılabilmesi için mail gönderiliyor. Tıklanan link ile giriş sağlanıyor.")
     public void checkPageControl() throws InterruptedException {
 
         loginPage.signIn()

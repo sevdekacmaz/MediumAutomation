@@ -16,7 +16,7 @@ public class LoginTests extends BaseTest {
         loginPage.signInPageControl(signInText);
 
     }
-    @Test
+    @Test(description = "Başarılı Login")
     public void successLogin() throws InterruptedException {
 
 
@@ -27,7 +27,7 @@ public class LoginTests extends BaseTest {
         loginPage.clickContinue();
     }
 
-    @Test
+    @Test(description = "Kayıtlı olmayan mail kontrolü")
     public void unSuccessLogin() throws InterruptedException {
 
 
@@ -41,7 +41,7 @@ public class LoginTests extends BaseTest {
 
     }
 
-    @Test
+    @Test(description = "Boş mail kontrolü")
     public void emptyMailInput() throws InterruptedException {
 
         loginPage.signIn()
@@ -53,7 +53,7 @@ public class LoginTests extends BaseTest {
         loginPage.emptyMailInputControl(message);
     }
 
-    @Test
+    @Test(description = "geçersiz mail kontrolü")
     public void invalidMailControl() throws InterruptedException {
 
 

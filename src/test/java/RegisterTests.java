@@ -20,7 +20,7 @@ public class RegisterTests extends BaseTest {
 
     }
 
-    @Test
+    @Test(description = "Başarılı kullanıcı kaydı")
     public void registerSuccess() throws InterruptedException {
 
         registerPage
@@ -33,6 +33,7 @@ public class RegisterTests extends BaseTest {
     }
 
     @Test(description = "Kayıtlı bir mail adresi ile tekrar kayıt kontrolü")
+    //Kayıtlı mail ile tekrar kayıt olmaya çalışıldığında Sign in işlemi yapar gibi davranıyor.
     public void alreadyRegisteredEmail() {
 
         registerPage
