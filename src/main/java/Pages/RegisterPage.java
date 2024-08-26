@@ -1,11 +1,12 @@
 package Pages;
 
+import Base.BaseLibrary;
 import Base.Data;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class RegisterPage extends Data {
+public class RegisterPage extends BaseLibrary {
 
     @Step("Get Started butonu tıklanır.")
     public RegisterPage getStarted() {
@@ -16,6 +17,7 @@ public class RegisterPage extends Data {
     @Step("Mail ile giriş yapma seçeneği seçilir.")
     public RegisterPage signUpWithMail (){
         driver.findElements(By.cssSelector("[class='cq b ei ej ct hk gs dm hl hm db dc dh hn ho hp hq hr di u dj dk dl']")).get(2).click();
+        screenshot();
         return this;
     }
 
@@ -23,6 +25,7 @@ public class RegisterPage extends Data {
     public RegisterPage signUpPageControl(String text){
         driver.findElement(By.cssSelector("[class='cq b ei ej ct']")).getText();
         Assert.assertEquals(text,signUpText);
+        screenshot();
         return this;
     }
 
@@ -36,7 +39,9 @@ public class RegisterPage extends Data {
     @Step("Continue butonu tıklanır.")
     public RegisterPage clickContinue(){
         driver.findElement(By.cssSelector("[class='cq b cr cs cv cw cx cy cz da db dc dd de df dg dh ja di u dj dk dl dm']")).click();
+        screenshot();
         return this;
+
     }
 
     @Step("Geçersiz mail adresi ile giriş yapılır.")

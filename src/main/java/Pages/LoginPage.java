@@ -1,12 +1,13 @@
 package Pages;
 
+import Base.BaseLibrary;
 import Base.Data;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class LoginPage extends Data {
+public class LoginPage extends BaseLibrary {
 
     @Step("Sign In butonuna tıklanır.")
     public LoginPage signIn(){
@@ -37,6 +38,7 @@ public class LoginPage extends Data {
     @Step("Continue butonu tıklanır.")
     public LoginPage clickContinue(){
         driver.findElement(By.cssSelector("[class='jb hv bt']")).click();
+        screenshot();
         return this;
     }
 
@@ -44,6 +46,7 @@ public class LoginPage extends Data {
     public LoginPage invalidUserControl(String text){
         driver.findElement(By.cssSelector("[class='dz b he hf hg ed ee']")).getText();
         Assert.assertEquals(text,invalidUserMessage);
+        screenshot();
         return this;
     }
 
@@ -51,6 +54,7 @@ public class LoginPage extends Data {
     public LoginPage emptyMailInputControl(String text){
         driver.findElement(By.cssSelector("[class='cq b fb cs jj m iw']")).getText();
         Assert.assertEquals(text,message);
+        screenshot();
         return this;
     }
 
@@ -58,6 +62,7 @@ public class LoginPage extends Data {
     public LoginPage invalidMailControl(String text){
         driver.findElement(By.cssSelector("[class='cq b fb cs jj m iw']")).getText();
         Assert.assertEquals(text,message);
+        screenshot();
         return this;
     }
 

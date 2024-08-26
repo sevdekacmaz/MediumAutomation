@@ -17,7 +17,6 @@ public class RegisterTests extends BaseTest {
                 signUpWithMail()
                 .signUpPageControl(signUpText);
 
-
     }
 
     @Test(description = "Başarılı kullanıcı kaydı")
